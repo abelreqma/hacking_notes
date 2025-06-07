@@ -118,6 +118,11 @@ ls -lah /path/to/cron/file.sh
 
 # Files & Directories
 
+**Permissions on Password Files**
+```
+ls -l /etc/passwd
+ls -l /etc/shadow
+```
 **Insecure File Permissions**
 ```
 find / -writable -type d 2>/dev/null
