@@ -110,6 +110,8 @@ ls /usr/bin/python*
 ls -lah /etc/cron*
 crontab -l           #unprivileged attempt
 sudo crontab -l      #if privileges allow it
+grep "CRON" /var/log/syslog
+ls -lah /path/to/cron/file.sh
 ```
 
 <br>
@@ -123,6 +125,10 @@ find / -writable -type d 2>/dev/null
 **SUID-marked Binaries**
 ```
 find / -perm -u=s -type f 2>/dev/null
+```
+**Binaries with Capabilities**
+```
+/usr/sbin/getcap -r / 2>/dev/null
 ```
 **Configuration Files**
 ```
