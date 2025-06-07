@@ -130,6 +130,13 @@ find / -writable -type d 2>/dev/null
 **SUID-marked Binaries**
 ```
 find / -perm -u=s -type f 2>/dev/null
+find / -user root -perm -4000 -exec ls -ldb {} \; 2>/dev/null
+```
+**Set-GID**
+```
+find / -uid 0 -perm -6000 -type f 2>/dev/null
+find / -perm -u=s -type f 2>/dev/null
+find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null
 ```
 **Binaries with Capabilities**
 ```
