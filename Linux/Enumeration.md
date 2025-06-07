@@ -141,6 +141,7 @@ find / -user root -perm -6000 -exec ls -ldb {} \; 2>/dev/null
 **Binaries with Capabilities**
 ```
 /usr/sbin/getcap -r / 2>/dev/null
+find /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -exec getcap {} \;
 ```
 **Configuration Files**
 ```
